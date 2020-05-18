@@ -2,6 +2,10 @@
 <html lang="{{ .Site.Language }}">
     <head>
         {{ partial "head.html" . }}
+
+        {{ if or .Params.math .Site.Params.math }}
+        {{ partial "math.html" . }}
+        {{ end }}
     </head>
 
     <body class="{{ if ne $.Site.Params.defaultTheme "light" -}} dark-theme {{- end -}}">
